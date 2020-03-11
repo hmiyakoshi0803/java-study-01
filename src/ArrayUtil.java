@@ -1,13 +1,15 @@
-import java.util.Arrays;
+package src;
 
 class ArrayUtil {
     public static boolean isEqual(int nums[]){
 
-        boolean answer = false;
+        boolean answer = true;
 
         for (int i=0; i < nums.length -1; i++) {
-            answer =  (nums[i] == nums[i+1]) ? true : false;
-            if (!answer) break;
+            if (nums[i] != nums[i+1]) {
+                answer = false;
+                break;
+            }
         }
         return answer;
 
@@ -25,7 +27,8 @@ class ArrayUtil {
     
     public static int[] and(int array1[], int array2[]){
 
-        int result_array[] = new int[4];
+        int numOfArray = array1.length;
+        int result_array[] = new int[numOfArray];
 
         for(int i=0; i < array1.length; i++){
             result_array[i] = array1[i] * array2[i];
