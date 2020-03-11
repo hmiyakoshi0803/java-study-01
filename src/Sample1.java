@@ -1,8 +1,6 @@
-package src;
-
 import java.util.Arrays;
 
-class Sample1_3 {
+class Sample1 {
     public static void main (String args[]){
         int[] array1 = {1, 2, 3, 4};
         int[] array2 = {2, 2, 2, 2};

@@ -1,5 +1,3 @@
-package src;
-
 class Concat {
     public static void main(String[] args) {
 
