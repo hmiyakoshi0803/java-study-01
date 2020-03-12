@@ -33,35 +33,19 @@ public class Caesar {
         int result2 = result1 + i;
 
         // Adjust result2 within 0 and 25
-        //int result3 = (result2 > 25) ? result2 - 26 : result2;
         int result3 = result2 % 26;
 
         // Convert int to char
-        char resultChar = int2char(result3);
-
-        return resultChar;
+        return int2char(result3);
 
     }
 
 
     public static char unshift(int i, char c) {
 
-        // Convert char to int
-        int result1 = char2int(c);
-
-        // Shift
-        int result2 = result1 - i;
-
-        // Adjust result2 within 0 and 25
-        //int result3 = (result2 < 0) ? result2 + 26 : result2;
-        int result3 = result2 % 26;
-
-        // Convert int to char
-        char resultChar = int2char(result3);
-
-        return resultChar;
-
+        return shift(26 - i, c);
     }
+
 
     public static String encode(int i, String str) {
 
@@ -78,6 +62,7 @@ public class Caesar {
 
     }
 
+    
     public static String decode(int i, String str) {
         
         String resultStr = encode(26 - i, str);
