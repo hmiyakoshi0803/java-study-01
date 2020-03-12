@@ -1,15 +1,12 @@
 class ArrayUtil {
     public static boolean isEqual(int nums[]){
 
-        boolean answer = true;
-
         for (int i=0; i < nums.length -1; i++) {
             if (nums[i] != nums[i+1]) {
-                answer = false;
-                break;
+                return false;
             }
         }
-        return answer;
+        return true;
 
     }
 
