@@ -49,20 +49,22 @@ public class Caesar {
 
     public static String encode(int i, String str) {
 
-        String resultStr = "";
+        //String resultStr = "";
+        StringBuilder resultStr = new StringBuilder();
 
         char[] charArray = str.toCharArray();
 
         for (char c : charArray) {
             char c1 = (isLowerChar(c)) ? shift(i, c) : c;
 
-            resultStr = resultStr + c1;
+            resultStr.append(c1);
         }
-        return resultStr;
+
+        return new String(resultStr);
 
     }
 
-    
+
     public static String decode(int i, String str) {
         
         String resultStr = encode(26 - i, str);
