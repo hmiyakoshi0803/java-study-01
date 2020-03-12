@@ -33,7 +33,8 @@ public class Caesar {
         int result2 = result1 + i;
 
         // Adjust result2 within 0 and 25
-        int result3 = (result2 > 25) ? result2 - 26 : result2;
+        //int result3 = (result2 > 25) ? result2 - 26 : result2;
+        int result3 = result2 % 26;
 
         // Convert int to char
         char resultChar = int2char(result3);
@@ -52,7 +53,8 @@ public class Caesar {
         int result2 = result1 - i;
 
         // Adjust result2 within 0 and 25
-        int result3 = (result2 < 0) ? result2 + 26 : result2;
+        //int result3 = (result2 < 0) ? result2 + 26 : result2;
+        int result3 = result2 % 26;
 
         // Convert int to char
         char resultChar = int2char(result3);
@@ -77,17 +79,8 @@ public class Caesar {
     }
 
     public static String decode(int i, String str) {
-
-        String resultStr = "";
-
-        char[] charArray = str.toCharArray();
-
-        for (char c : charArray) {
-            char c1 = (isLowerChar(c)) ? unshift(i, c) : c;
-
-            resultStr = resultStr + c1;
-        }
+        
+        String resultStr = encode(26 - i, str);
         return resultStr;
-
     }
 }
